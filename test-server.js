@@ -39,11 +39,19 @@ async function process_new_order_n_get_result() {
 // http server definition
 const express = require('express') // run npm install express
 const app = express()
+const Mutex = require('./mutex.js')
+const orders_count_mutex = new Mutex()
 
 app.get('/make-order', async (req, res) => {
   res.send(await process_new_order_n_get_result())
 })
 
+app.get('/make-order-fixed', async (req, res) => {
+  const unlock = await orders_count_mutex.lock() // we lock the access to the orders count resource
+  const response = await process_new_order_n_get_result() // we make our processing
+  unlock() // we release the resource
+  res.send(response) // we send the response
+})
 
 app.listen(8080)
 // as a result, the url "http://localhost:8080/make-order" will be exposed
