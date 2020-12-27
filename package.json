@@ -1,0 +1,32 @@
+{
+  "name": "mutex_exple",
+  "version": "1.0.0",
+  "description": "Simple code snippets and command tests to illustrate mutex implemantion on a node.js server",
+  "main": "test-server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test-1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Berbass/mutex_exple.git"
+  },
+  "keywords": [
+    "mutex",
+    "javascript",
+    "node",
+    "node.js",
+    "locks",
+    "express",
+    "express.js"
+  ],
+  "author": "Bernardin Ebassa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Berbass/mutex_exple/issues"
+  },
+  "homepage": "https://github.com/Berbass/mutex_exple#readme"
+}
